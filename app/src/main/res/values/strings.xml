@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Habit Tracker</string>
+    <string name="habitName">Название</string>
+    <string name="habitDescription">Описание</string>
+    <string name="habitPriority">Приоритет</string>
+    <string name="habitType">Тип</string>
+    <string name="habitGood">Хорошая</string>
+    <string name="habitBad">Плохая</string>
+    <string name="habitRepeats">Количество повторений</string>
+    <string name="habitPeriod">Период (кол-во дней)</string>
+    <string name="apply">Применить</string>
+    <string name="editHabit">Изменить привычку</string>
+    <string name="createNewHabit">Создать новую привычку</string>
+    <string name="mainActivityTitle">Твои привычки</string>
+    <string name="create">Create</string>
+    <string name="mode">Mode</string>
+    <string name="newHabitCode">NEW_HABIT</string>
+    <string name="edit">Edit</string>
+    <string name="editableObjectCode">Editable</string>
+    <string name="emptyDescription">Описание: нет</string>
+    <string name="priorityTemplate">Приоритет: </string>
+    <string name="repeatsTemplate">Повторения: </string>
+    <string name="periodTemplate">Период: </string>
+    <string name="badType">bad</string>
+    <string name="goodType">good</string>
+
+    <string-array name="spinner_priority_values">
+        <item>Очень низкий</item>
+        <item>Низкий</item>
+        <item>Средний</item>
+        <item>Высокий</item>
+        <item>Срочный</item>
+    </string-array>
+
+    <string-array name="nav_values">
+        <item>Домашний экран</item>
+        <item>О приложении</item>
+    </string-array>
+
+    <string name="appAbout">Трекер привычек\n\nДанное приложение позволяет отслеживать твои привычки</string>
+
+</resources>
