@@ -2,9 +2,6 @@ package com.example.habittracker
 
 import android.graphics.Color
 
-const val CREATE_CODE = 228
-const val EDIT_CODE = 322
-
 val priorities = listOf(
     "Очень низкий",
     "Низкий",

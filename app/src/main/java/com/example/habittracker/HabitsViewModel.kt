@@ -31,17 +31,24 @@ class HabitsViewModel(private val model: HabitsModel) : ViewModel() {
         mutableBadHabits.postValue(bad)
     }
 
-    fun filter(filter: String, sortByPriority: Boolean){
+    fun filter(filter: String, sortByPriority: Boolean) {
         val habits = model.getHabits()
 
         var good = habits.filter {
-            it.type == HabitType.Good && it.name.toLowerCase(Locale.getDefault()).contains(filter)
+            it.type == HabitType.Good && it.name
+                .toLowerCase(Locale.getDefault())
+                .contains(
+                    filter.toLowerCase(Locale.getDefault())
+                )
         }
         if (sortByPriority) good = good.sorted()
         mutableGoodHabits.postValue(good)
 
         var bad = habits.filter {
-            it.type == HabitType.Bad && it.name.toLowerCase(Locale.getDefault()).contains(filter)
+            it.type == HabitType.Bad && it.name
+                .toLowerCase(Locale.getDefault())
+                .contains(filter.toLowerCase(Locale.getDefault())
+            )
         }
         if (sortByPriority) bad = bad.sorted()
         mutableBadHabits.postValue(bad)
