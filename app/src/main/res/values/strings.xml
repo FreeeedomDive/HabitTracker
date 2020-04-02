@@ -13,17 +13,10 @@
     <string name="editHabit">Изменить привычку</string>
     <string name="createNewHabit">Создать новую привычку</string>
     <string name="mainActivityTitle">Твои привычки</string>
-    <string name="create">Create</string>
-    <string name="mode">Mode</string>
-    <string name="newHabitCode">NEW_HABIT</string>
-    <string name="edit">Edit</string>
-    <string name="editableObjectCode">Editable</string>
     <string name="emptyDescription">Описание: нет</string>
     <string name="priorityTemplate">Приоритет: </string>
     <string name="repeatsTemplate">Повторения: </string>
     <string name="periodTemplate">Период: </string>
-    <string name="badType">bad</string>
-    <string name="goodType">good</string>
 
     <string-array name="spinner_priority_values">
         <item>Очень низкий</item>
@@ -39,5 +32,8 @@
     </string-array>
 
     <string name="appAbout">Трекер привычек\n\nДанное приложение позволяет отслеживать твои привычки</string>
+    <string name="filters">Фильтры и сортировки</string>
+    <string name="searchByName">Начните вводить название привычки</string>
+    <string name="sortByPriority">Сортировать по приоритету</string>
 
 </resources>
