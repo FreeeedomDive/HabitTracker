@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    fun createModel() {
+    private fun createModel() {
         val model = HabitsModel
         model.putContext(this)
     }
