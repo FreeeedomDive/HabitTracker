@@ -35,5 +35,6 @@
     <string name="filters">Фильтры и сортировки</string>
     <string name="searchByName">Начните вводить название привычки</string>
     <string name="sortByPriority">Сортировать по приоритету</string>
+    <string name="deleteHabit">X</string>
 
 </resources>

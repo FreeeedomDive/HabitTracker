@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        createModel()
 
         openMainFragment()
 
@@ -33,6 +37,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 drawer.closeDrawers()
             }
+    }
+
+    fun createModel() {
+        val model = HabitsModel
+        model.putContext(this)
     }
 
     fun openMainFragment() {

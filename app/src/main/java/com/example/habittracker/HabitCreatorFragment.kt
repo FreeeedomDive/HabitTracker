@@ -62,8 +62,10 @@ class HabitCreatorFragment : Fragment() {
 
         viewModel.habit.observe(viewLifecycleOwner, Observer {
             habit ->
+            deleteButton.isEnabled = false
                 if (habit != null) {
                     fillEditingObject(habit)
+                    deleteButton.isEnabled = true
                 }
         })
     }
@@ -99,6 +101,11 @@ class HabitCreatorFragment : Fragment() {
                 viewModel.putHabit(habit)
                 (activity as MainActivity).openMainFragment()
             }
+        }
+
+        deleteButton.setOnClickListener {
+            viewModel.deleteHabit()
+            (activity as MainActivity).openMainFragment()
         }
     }
 

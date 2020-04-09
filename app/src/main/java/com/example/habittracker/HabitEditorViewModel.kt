@@ -4,7 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HabitEditorViewModel(private val model: HabitsModel, private val editableHabit: Habit?) : ViewModel() {
+class HabitEditorViewModel(private val model: HabitsModel, private val editableHabit: Habit?) :
+    ViewModel() {
 
     private val mutableHabit: MutableLiveData<Habit?> = MutableLiveData()
 
@@ -18,16 +19,22 @@ class HabitEditorViewModel(private val model: HabitsModel, private val editableH
         mutableHabit.postValue(editableHabit)
     }
 
-    fun putHabit(habit: Habit){
+    fun putHabit(habit: Habit) {
         if (editableHabit != null) editHabit(habit) else addHabit(habit)
     }
 
-    private fun addHabit(habit: Habit){
+    private fun addHabit(habit: Habit) {
         model.addHabit(habit)
     }
 
-    private fun editHabit(newHabit: Habit){
-        model.editHabit(editableHabit!!, newHabit)
+    private fun editHabit(newHabit: Habit) {
+        model.editHabit(newHabit)
+    }
+
+    fun deleteHabit() {
+        if (editableHabit != null) {
+            model.deleteHabit(editableHabit)
+        }
     }
 
 }

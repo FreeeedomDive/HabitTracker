@@ -1,24 +1,38 @@
 package com.example.habittracker
 
+import android.content.Context
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+
 object HabitsModel {
 
-    private val habits: MutableList<Habit> = mutableListOf()
+    lateinit var appContext: Context
+    lateinit var db: DatabaseContext
+
+    fun putContext(context: Context){
+        appContext = context
+        db = DatabaseContext(appContext)
+    }
 
     fun getHabits(): List<Habit> {
-        return habits
+        return db.habitDao().getAll()
     }
 
     fun addHabit(habit: Habit) {
-        habits.add(habit)
+        GlobalScope.launch {
+            db.habitDao().insertAll(habit)
+        }
     }
 
-    fun editHabit(oldHabit: Habit, newHabit: Habit) {
-        val editable = habits[habits.indexOf(oldHabit)]
-        editable.name = newHabit.name
-        editable.description = newHabit.description
-        editable.priority = newHabit.priority
-        editable.type = newHabit.type
-        editable.repeats = newHabit.repeats
-        editable.period = newHabit.period
+    fun editHabit(newHabit: Habit) {
+        GlobalScope.launch {
+            db.habitDao().update(newHabit)
+        }
+    }
+
+    fun deleteHabit(habit: Habit){
+        GlobalScope.launch {
+            db.habitDao().delete(habit)
+        }
     }
 }

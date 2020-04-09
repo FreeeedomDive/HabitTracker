@@ -1,5 +1,8 @@
 package com.example.habittracker
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import java.io.Serializable
 
 enum class HabitType{
@@ -15,8 +18,10 @@ enum class Priority(val priority: Int) {
     Urgent(5)
 }
 
-class Habit(
-    var name: String,
+@Entity
+@TypeConverters(Converters::class)
+data class Habit(
+    @PrimaryKey var name: String,
     var description: String,
     var priority: Priority,
     var type: HabitType,
